@@ -8,7 +8,7 @@ RUN mvn clean package -DskipTests
 # Run stage
 FROM openjdk:17.0.1-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/Capstone-1-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/testdeploy-0.0.1-SNAPSHOT.jar app.jar
 
 # Create directories for file storage (if needed)
 RUN mkdir -p /app/files /app/certificates
